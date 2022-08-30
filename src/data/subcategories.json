@@ -1,0 +1,93 @@
+[
+  {
+    "id": "1",
+    "uuid": "30C91D87-DA30-F9F3-0013-67A982226E91",
+    "category_uuid": "30C91D87-DA96-F9F3-0002-67A982226E79",
+    "name": "Agriculture",
+    "icon_filename": "Agric.png"
+  },
+  {
+    "id": "2",
+    "uuid": "30C91D87-DA30-F9F3-0005-67A982226E83",
+    "category_uuid": "30C91D87-DA96-F9F3-0002-67A982226E79",
+    "name": "Arts and Culture",
+    "icon_filename": "Arts-and-Culture.png"
+  },
+  {
+    "id": "3",
+    "uuid": "30C91D87-DA30-F9F3-0008-67A982226E86",
+    "category_uuid": "30C91D87-DA96-F9F3-0002-67A982226E79",
+    "name": "Business",
+    "icon_filename": "Business.png"
+  },
+  {
+    "id": "4",
+    "uuid": "30C91D87-DA30-F9F3-0011-67A982226E89",
+    "category_uuid": "30C91D87-DA96-F9F3-0001-67A982226E12",
+    "name": "Child care",
+    "icon_filename": "ChildCare.png"
+  },
+  {
+    "id": "5",
+    "uuid": "30C91D87-DA30-F9F3-0006-67A982226E84",
+    "category_uuid": "30C91D87-DA96-F9F3-0001-67A982226E12",
+    "name": "Community",
+    "icon_filename": "Community.png"
+  },
+  {
+    "id": "6",
+    "uuid": "30C91D87-DA30-F9F3-0004-67A982226E82",
+    "category_uuid": "30C91D87-DA96-F9F3-0002-67A982226E79",
+    "name": "Disability Support",
+    "icon_filename": "Disability-Support.png"
+  },
+  {
+    "id": "7",
+    "uuid": "30C91D87-DA30-F9F3-0002-67A982226E80",
+    "category_uuid": "30C91D87-DA96-F9F3-0002-67A982226E79",
+    "name": "Education",
+    "icon_filename": "Education.png"
+  },
+  {
+    "id": "8",
+    "uuid": "30C91D87-DA30-F9F3-0007-67A982226E85",
+    "category_uuid": "30C91D87-DA96-F9F3-0001-67A982226E12",
+    "name": "Health",
+    "icon_filename": "Health.png"
+  },
+  {
+    "id": "9",
+    "uuid": "30C91D87-DA30-F9F3-0012-67A982226E90",
+    "category_uuid": "30C91D87-DA96-F9F3-0001-67A982226E12",
+    "name": "Housing",
+    "icon_filename": "Housing.png"
+  },
+  {
+    "id": "10",
+    "uuid": "30C91D87-DA30-F9F3-0003-67A982226E81",
+    "category_uuid": "30C91D87-DA96-F9F3-0002-67A982226E79",
+    "name": "ICT Libraries",
+    "icon_filename": "ICT-Lib.png"
+  },
+  {
+    "id": "11",
+    "uuid": "30C91D87-DA30-F9F3-0001-67A982226E79",
+    "category_uuid": "30C91D87-DA96-F9F3-0001-67A982226E12",
+    "name": "Preventive Medicine",
+    "icon_filename": "Preventive-Medicine.png"
+  },
+  {
+    "id": "12",
+    "uuid": "30C91D87-DA30-F9F3-0009-67A982226E87",
+    "category_uuid": "30C91D87-DA96-F9F3-0001-67A982226E12",
+    "name": "Security",
+    "icon_filename": "security.png"
+  },
+  {
+    "id": "13",
+    "uuid": "30C91D87-DA30-F9F3-0010-67A982226E88",
+    "category_uuid": "30C91D87-DA96-F9F3-0002-67A982226E79",
+    "name": "Women-in-Business",
+    "icon_filename": "WinBiz.png"
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "id": "1",
+    "uuid": "30C91D87-DA96-F9F3-0001-67A982226E12",
+    "name": "National Priority",
+    "icon_filename": "national-priority.png"
+  },
+  {
+    "id": "2",
+    "uuid": "30C91D87-DA96-F9F3-0002-67A982226E79",
+    "name": "Youth Development",
+    "icon_filename": "youth-development.png"
+  }
+]

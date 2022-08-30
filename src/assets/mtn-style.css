@@ -1,0 +1,389 @@
+.mtn-card {
+  box-sizing: border-box;
+  border-radius: 20px;
+  min-height: 285px;
+  padding: 20px;
+  position: relative;
+  margin-bottom: 6px;
+  background-color: #fff;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.bg--yellow {
+  background-color: #fc0;
+  color: #000;
+}
+.mtn-card.mtn-card--cursor {
+  cursor: pointer !important;
+}
+.mtn-card.mtn-card--shadow {
+  box-shadow: 0 0 0 2px #f2f2f2;
+  transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1);
+}
+.mtn-card.mtn-card--shadow:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+.mtn-card.mtn-card--link {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.mtn-card.mtn-card--grey {
+  background-color: #f2f2f2;
+  color: #000;
+}
+.mtn-card .mtn-btn,
+.mtn-card .mtn-fab-btn,
+.mtn-card .mtn-fab-btn--mini,
+.mtn-card .mtn-icon-btn,
+.mtn-card .mtn-icon-btn--mini {
+  margin: 0;
+  width: auto !important;
+}
+.mtn-card-stack .mtn-card {
+  margin-bottom: 40px;
+}
+.mtn-card-stack .mtn-card:last-child {
+  margin-bottom: 0;
+}
+.mtn-tag {
+  font-family: MTNBrighterSans-Bold, Century Gothic, Arial, sans-serif;
+  font-weight: 600;
+  background-color: #000;
+  display: inline-block;
+  color: #fff;
+  font-size: 14px;
+  padding: 3px 5px;
+  margin: 0;
+}
+.mtn-tag.mtn-tag--white {
+  background-color: #fff;
+  color: #000;
+}
+.mtn-tag.mtn-tag--yellow {
+  background-color: #fc0;
+  color: #000;
+}
+.mtn-tag.mtn--black {
+  background-color: #000;
+  color: #fff;
+}
+.mtn-tag.mtn-tag--momo {
+  background-color: #0f6987;
+}
+.mtn-tag.mtn-tag--yolo {
+  background-color: #871259;
+}
+.mtn-tag.mtn-tag--youth {
+  background-color: #f5821e;
+}
+.mtn-tag.mtn-tag--play {
+  background-color: #e12d6e;
+}
+.mtn-tag.mtn-tag--grey {
+  background-color: #f2f2f2;
+  color: #000;
+}
+.clearfix {
+  clear: both;
+}
+
+.mtn-btn,
+.mtn-fab-btn,
+.mtn-fab-btn--mini,
+.mtn-icon-btn,
+.mtn-icon-btn--mini {
+  font-family: MTNBrighterSans-Medium, Century Gothic, Arial, sans-serif;
+  font-weight: 500;
+  background-color: #fc0;
+  border: none;
+  border-radius: 24px;
+  color: #000;
+  position: relative;
+  height: 40px;
+  margin: 0 0 10px;
+  padding: 10px 16px;
+  min-width: auto;
+  font-size: 14px;
+  line-height: 1 !important;
+  letter-spacing: 0;
+  overflow: hidden;
+  will-change: box-shadow;
+  transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1),
+    background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    border 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+  cursor: pointer;
+  text-decoration: none !important;
+  vertical-align: middle;
+  box-sizing: border-box;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.mtn-btn .mtn-icon:before,
+.mtn-fab-btn--mini .mtn-icon:before,
+.mtn-fab-btn .mtn-icon:before,
+.mtn-icon-btn--mini .mtn-icon:before,
+.mtn-icon-btn .mtn-icon:before {
+  font-family: mtn-icon !important;
+}
+.mtn-btn--full-width {
+  width: 100%;
+}
+.mtn-btn--full-width .mdi:last-of-type,
+.mtn-btn--full-width .mtn-icon:last-of-type {
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+}
+.mtn-btn .material-icons,
+.mtn-btn .mdi,
+.mtn-btn .mtn-icon,
+.mtn-fab-btn--mini .material-icons,
+.mtn-fab-btn--mini .mdi,
+.mtn-fab-btn--mini .mtn-icon,
+.mtn-fab-btn .material-icons,
+.mtn-fab-btn .mdi,
+.mtn-fab-btn .mtn-icon,
+.mtn-icon-btn--mini .material-icons,
+.mtn-icon-btn--mini .mdi,
+.mtn-icon-btn--mini .mtn-icon,
+.mtn-icon-btn .material-icons,
+.mtn-icon-btn .mdi,
+.mtn-icon-btn .mtn-icon {
+  position: relative;
+  display: inline-flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  font-size: 20px;
+}
+.mtn-btn::-moz-focus-inner,
+.mtn-fab-btn--mini::-moz-focus-inner,
+.mtn-fab-btn::-moz-focus-inner,
+.mtn-icon-btn--mini::-moz-focus-inner,
+.mtn-icon-btn::-moz-focus-inner {
+  border: 0;
+}
+.mtn-btn:hover,
+.mtn-fab-btn--mini:hover,
+.mtn-fab-btn:hover,
+.mtn-icon-btn--mini:hover,
+.mtn-icon-btn:hover {
+  background-color: #ffe05c;
+}
+.mtn-btn:focus:not(:active),
+.mtn-fab-btn--mini:focus:not(:active),
+.mtn-fab-btn:focus:not(:active),
+.mtn-icon-btn--mini:focus:not(:active),
+.mtn-icon-btn:focus:not(:active) {
+  background-color: #ffe37c;
+}
+.mtn-btn:active,
+.mtn-fab-btn--mini:active,
+.mtn-fab-btn:active,
+.mtn-icon-btn--mini:active,
+.mtn-icon-btn:active {
+  background-color: #ffe273;
+}
+.mtn-btn .mtn-btn__ripple-container,
+.mtn-fab-btn--mini .mtn-btn__ripple-container,
+.mtn-fab-btn .mtn-btn__ripple-container,
+.mtn-icon-btn--mini .mtn-btn__ripple-container,
+.mtn-icon-btn .mtn-btn__ripple-container {
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+.mtn-btn--disabled.mtn-fab-btn--mini .mtn-btn__ripple-container .mtn-ripple,
+.mtn-btn--disabled.mtn-fab-btn .mtn-btn__ripple-container .mtn-ripple,
+.mtn-btn--disabled.mtn-icon-btn--mini .mtn-btn__ripple-container .mtn-ripple,
+.mtn-btn--disabled.mtn-icon-btn .mtn-btn__ripple-container .mtn-ripple,
+.mtn-btn.mtn-btn--disabled .mtn-btn__ripple-container .mtn-ripple,
+.mtn-btn[disabled] .mtn-btn__ripple-container .mtn-ripple,
+.mtn-fab-btn--mini[disabled] .mtn-btn__ripple-container .mtn-ripple,
+.mtn-fab-btn[disabled] .mtn-btn__ripple-container .mtn-ripple,
+.mtn-icon-btn--mini[disabled] .mtn-btn__ripple-container .mtn-ripple,
+.mtn-icon-btn[disabled] .mtn-btn__ripple-container .mtn-ripple {
+  background-color: transparent;
+}
+.mtn-btn--left-and-right-icon,
+.mtn-btn--text-right-icon {
+  padding-right: 10px;
+}
+.mtn-btn--text-right-icon {
+  justify-content: space-between;
+}
+.mtn-btn--text-right-icon .mdi,
+.mtn-btn--text-right-icon .mtn-icon {
+  margin-left: 20px;
+}
+.mtn-btn--text-left-icon {
+  justify-content: space-between;
+}
+.mtn-btn--text-left-icon .material-icons,
+.mtn-btn--text-left-icon .mdi,
+.mtn-btn--text-left-icon .mtn-icon {
+  margin-left: -5px;
+  margin-right: 8px;
+}
+.mtn-btn--left-and-right-icon {
+  justify-content: flex-start;
+}
+.mtn-btn--left-and-right-icon .material-icons:first-of-type,
+.mtn-btn--left-and-right-icon .mtn-card--clear:before {
+  background: linear-gradient(0deg, transparent, rgba(255, 0, 0, 0)) !important;
+}
+.mtn-card--no-link .mtn-h2 {
+  font-size: 40px;
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+.mtn-card--no-link .mtn-p {
+  margin: 0;
+  font-size: 20px;
+  color: #fc0;
+  font-weight: 700;
+}
+.mtn-card.mtn-card--link {
+  background-size: cover !important;
+  margin: 10px 0;
+}
+.mtn-card.mtn-card--link .mtn-card__content .mtn-tag {
+  margin-bottom: 10px;
+}
+.mtn-card.mtn-card--link .mtn-card__content .mtn-card__header {
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+.mtn-card.mtn-card--link .mtn-card__content .mtn-p {
+  line-height: 18px;
+  font-size: 14px;
+}
+.mtn-card.mtn-card--link.mtn-card--large {
+  height: 440px;
+}
+.mtn-card.mtn-card--link.mtn-card--large .mtn-tag {
+  font-size: 18px;
+  padding: 5px 6px;
+  margin-bottom: 20px;
+}
+.mtn-card.mtn-card--link.mtn-card--large .mtn-card__header {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+.mtn-card.mtn-card--link.mtn-card--link--fab .mtn-btn,
+.mtn-card.mtn-card--link.mtn-card--link--fab .mtn-fab-btn,
+.mtn-card.mtn-card--link.mtn-card--link--fab .mtn-fab-btn--mini,
+.mtn-card.mtn-card--link.mtn-card--link--fab .mtn-icon-btn,
+.mtn-card.mtn-card--link.mtn-card--link--fab .mtn-icon-btn--mini {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.mtn-card.mtn-card--link.mtn-card--link--fab .mtn-card__header.mtn-p {
+  margin: 0;
+  font-size: 20px;
+  color: #fc0;
+}
+@media (max-width: 600px) {
+  .mtn-card--link--fab .mtn-card__content .mtn-p {
+    line-height: 15px;
+  }
+}
+.mtn-card.mtn-card--image {
+  background-size: cover;
+  background-position: 50%;
+}
+.mtn-card.mtn-card--image:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 20px;
+  background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.9)) !important;
+}
+.mtn-card.mtn-card--image .mtn-card__content {
+  font-family: MTNBrighterSans-Regular, Century Gothic, Arial, sans-serif;
+  color: #fff;
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 30px;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  line-height: 1;
+  font-size: 1rem;
+  vertical-align: baseline;
+}
+.mtn-title {
+  width: 100%;
+  clear: both;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  min-height: 40px;
+}
+.mtn-title .mtn-title--heading {
+  width: 85%;
+  display: inline-block;
+  position: relative;
+  /* float: left; */
+  clear: none;
+  vertical-align: top;
+  margin: 0;
+}
+@media screen and (min-width: 768px) {
+  .mtn-title .mtn-title--heading {
+    width: auto;
+  }
+}
+.mtn-title .mtn-title--icon {
+  position: relative;
+  margin-right: 20px;
+}
+.mtn-title .mtn-title--icon img {
+  max-width: 100%;
+}
+.mtn-title .mtn-title--icon .mdi,
+.mtn-title .mtn-title--icon .mtn-icon {
+  font-size: 40px;
+}
+.mtn-title .mtn-btn,
+.mtn-title .mtn-fab-btn,
+.mtn-title .mtn-fab-btn--mini,
+.mtn-title .mtn-icon-btn,
+.mtn-title .mtn-icon-btn--mini {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  margin-left: 0;
+}
+@media screen and (min-width: 768px) {
+  .mtn-title .mtn-btn,
+  .mtn-title .mtn-fab-btn,
+  .mtn-title .mtn-fab-btn--mini,
+  .mtn-title .mtn-icon-btn,
+  .mtn-title .mtn-icon-btn--mini {
+    position: relative;
+    margin-left: 40px;
+  }
+}
