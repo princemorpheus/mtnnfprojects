@@ -38,7 +38,7 @@ export default {
           style="width: 100%; height: 300px"
         ></div>
         <div class="mt-3 pt-2 px-4 m-0 relative">
-          <div class="absolute" style="top: -50px">
+          <div class="absolute" style="top: -30px">
             <span class="w3-round-xxlarge bg--yellow w3-border px-3 py-2 m-2">
               <img
                 v-if="categories[info.category_uuid].icon_filename"
@@ -46,7 +46,7 @@ export default {
                   '/images/icons/categories/' +
                   categories[info.category_uuid].icon_filename
                 "
-                style="width: 48px"
+                style="width: 24px"
               />
               {{ categories[info.category_uuid].name }}
             </span>
@@ -57,12 +57,13 @@ export default {
                   '/images/icons/subcategories/' +
                   subcategories[info.subcategory_uuid].icon_filename
                 "
-                style="width: 48px"
+                style="width: 24px"
               />
               {{ subcategories[info.subcategory_uuid].name }}
             </span>
           </div>
-          <h3 class="mb-5 mb-sm-4 mt-5 size24 bold">{{ info.title }}</h3>
+          <h3 class="mb-5 mb-sm-4 mt-5 bold">{{ info.title }}</h3>
+
           <template v-if="info.sdg.length">
             <p
               class="
@@ -75,7 +76,6 @@ export default {
             >
               Social Development Goal<span v-if="info.sdg.length > 1">s</span>
             </p>
-            <pre>{{ cities[info.location_uuid] }} </pre>
             <div class="w3-row mb-5 mb-sm-4 justify-start">
               <div
                 v-for="sdg in info.sdg"

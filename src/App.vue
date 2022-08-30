@@ -1,7 +1,7 @@
 <script setup>
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars*/
-import { computed, ref, onMounted, watchEffect } from "vue";
+import { computed, ref, nextTick, onMounted, watchEffect } from "vue";
 import ProjectsData from "@/data/projects.json";
 import mapCategories from "@/data/categories.json";
 import mapSubcategories from "@/data/subcategories.json";
@@ -133,7 +133,10 @@ const toggleSubcategory = (subcategory) => {
 };
 const selectedProject = ref(null);
 const ShowDetail = (project) => {
-  selectedProject.value = project;
+  selectedProject.value = null;
+  nextTick(() => {
+    selectedProject.value = project;
+  });
 };
 console.log("Projects", Projects.value);
 const allData = computed(() =>
@@ -399,7 +402,6 @@ const pageCount = computed(() => {
                   style="width: 24px"
                 />
                 {{ subcategories[project.subcategory_uuid].name }}
-                <span class="p-2 bold w3-white"> {{ project.id }}</span>
               </div>
               <div class="mtn-card__content">
                 <div
