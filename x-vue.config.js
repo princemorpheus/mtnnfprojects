@@ -10,7 +10,7 @@ module.exports = {
   publicPath: process.env.NODE_ENV === 'production' ? '/mtnnfprojects/' : '/'
   // publicPath:
   //   process.env.NODE_ENV === 'production'
-  //     ? '/mtn/mtnf-map/wp-content/plugins/mtnnf-map/templates/mtnnfmap/dist/'
+  //     ? '/mtn/mtnf-map/wp-content/plugins/mtnnf-map/templates/mtnnfprojects/dist/'
   //     : '/'
   // publicPath: process.env.NODE_ENV === 'production'
   //     ? '/mtnnfmap/'

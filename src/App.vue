@@ -10,6 +10,8 @@ import states from "@/data/ngstates.json";
 import ngcities from "@/data/ngcities.json";
 import Paginate from "vuejs-paginate-next";
 
+const BASEURL = process.env.BASE_URL;
+console.log(BASEURL);
 const ActiveCategory = ref(null);
 const ActiveSubcategory = ref(null);
 
@@ -285,12 +287,12 @@ const pageCount = computed(() => {
             >
               <img
                 v-if="categories[c].icon_filename"
-                :src="'images/icons/categories/' + categories[c].icon_filename"
+                :src="`${BASEURL}images/icons/categories/${categories[c].icon_filename}`"
                 style="width: 16px"
               />
               {{ categories[c].name }}
-            </div></template
-          >
+            </div>
+          </template>
         </div>
       </div>
       <div v-if="ActiveCategory" class="w3-center">
@@ -321,9 +323,7 @@ const pageCount = computed(() => {
           >
             <img
               v-if="subcategories[sc].icon_filename"
-              :src="
-                'images/icons/subcategories/' + subcategories[sc].icon_filename
-              "
+              :src="`${BASEURL}images/icons/subcategories/${subcategories[sc].icon_filename}`"
               style="width: 16px"
             />
             {{ subcategories[sc].name }}
@@ -362,7 +362,7 @@ const pageCount = computed(() => {
       </paginate>
     </div>
     <div
-      style="width: 100%; height: 100vh; max-height: 100vh; overflow-x: auto"
+      style="width: 100%; height: 100vh; max-height: 100vh; overflow-x: hidden"
     >
       <div class="row" v-if="PagedData.length">
         <div
@@ -382,8 +382,7 @@ const pageCount = computed(() => {
               "
               style="background-repeat: no-repeat; background-position: center"
               :style="{
-                backgroundImage:
-                  'url(/images/banners/' + project.banner_filename + ')',
+                backgroundImage: `url(${BASEURL}images/banners/${project.banner_filename})`,
               }"
               @click.prevent="ShowDetail(project)"
             >
@@ -395,10 +394,9 @@ const pageCount = computed(() => {
                 <img
                   v-if="subcategories[project.subcategory_uuid].icon_filename"
                   class="m-0"
-                  :src="
-                    '/images/icons/subcategories/' +
+                  :src="`${BASEURL}images/icons/subcategories/${
                     subcategories[project.subcategory_uuid].icon_filename
-                  "
+                  }`"
                   style="width: 24px"
                 />
                 {{ subcategories[project.subcategory_uuid].name }}
@@ -416,10 +414,9 @@ const pageCount = computed(() => {
                 >
                   <img
                     v-if="categories[project.category_uuid].icon_filename"
-                    :src="
-                      '/images/icons/categories/' +
+                    :src="`${BASEURL}images/icons/categories/${
                       categories[project.category_uuid].icon_filename
-                    "
+                    }`"
                     style="width: 24px"
                   />
                   {{ categories[project.category_uuid].name }}

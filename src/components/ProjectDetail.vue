@@ -1,15 +1,9 @@
-<script>
-import Sdg from "@/data/sdg.json";
-export default {
-  name: "ProjectInfo",
-  props: ["info", "categories", "subcategories", "cities", "states"],
-  emits: ["close"],
-  setup() {
-    return {
-      Sdg,
-    };
-  },
-};
+<script setup>
+import { defineProps, defineEmits, toRefs } from "vue";
+const BASEURL = process.env.BASE_URL;
+const props = defineProps(["info", "categories", "subcategories", "states"]);
+const emit = defineEmits(["close"]);
+const { info, categories, subcategories, states } = toRefs(props);
 </script>
 <template>
   <div
@@ -18,7 +12,7 @@ export default {
   >
     <div class="relative" style="height: 100%; width: 100%">
       <span
-        @click="$emit('close')"
+        @click="emit('close')"
         class="cursor size36 w3-text-red w3-hover-text-orange absolute"
         style="right: 10px; top: 10px"
         ><font-awesome-icon icon="fa-solid fa-xmark"
@@ -32,7 +26,7 @@ export default {
           class="w3-grey background-image background-cover;"
           :style="{
             backgroundImage: info.banner_filename
-              ? 'url(/images/banners/' + info.banner_filename + ')'
+              ? `url(${BASEURL}images/banners/${info.banner_filename})`
               : null,
           }"
           style="width: 100%; height: 300px"
@@ -42,10 +36,9 @@ export default {
             <span class="w3-round-xxlarge bg--yellow w3-border px-3 py-2 m-2">
               <img
                 v-if="categories[info.category_uuid].icon_filename"
-                :src="
-                  '/images/icons/categories/' +
+                :src="`${BASEURL}images/icons/categories/${
                   categories[info.category_uuid].icon_filename
-                "
+                }`"
                 style="width: 24px"
               />
               {{ categories[info.category_uuid].name }}
@@ -53,10 +46,9 @@ export default {
             <span class="w3-round-xxlarge w3-white w3-border px-3 py-2 m-2">
               <img
                 v-if="subcategories[info.subcategory_uuid].icon_filename"
-                :src="
-                  '/images/icons/subcategories/' +
+                :src="`${BASEURL}images/icons/subcategories/${
                   subcategories[info.subcategory_uuid].icon_filename
-                "
+                }`"
                 style="width: 24px"
               />
               {{ subcategories[info.subcategory_uuid].name }}
@@ -85,7 +77,7 @@ export default {
               >
                 <div class="border-yello m-2" :title="sdg.value">
                   <img
-                    :src="'/images/sdg-goals/sdg-' + sdg + '.png'"
+                    :src="`${BASEURL}images/sdg-goals/sdg-${sdg}.png`"
                     style="width: 100%"
                   />
                 </div>
