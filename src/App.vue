@@ -23,7 +23,7 @@ const iProject = ref({ id: null, uuid: null, marker: null });
 const project = ref(new URL(location.href).searchParams.get("project"));
 const isNew = ref(project.value ? true : false);
 const page = ref(1);
-const perPages = [24, 48, 60, 100, 200];
+const perPages = [12, 24, 48, 60, 100, 200];
 const perPage = ref(perPages[1]);
 const mapState = ref("");
 const mapLocation = ref("");
@@ -187,27 +187,27 @@ const pageCount = computed(() => {
 });
 </script>
   <template>
-  <div class="container-fluid relative">
+  <teleport to="body">
     <ProjectDetail
       v-if="selectedProject"
       :info="selectedProject"
       :categories="categories"
       :subcategories="subcategories"
-      :cities="cities"
       :states="states"
-      style="z-index: 21"
       class="w3-animate-right"
       @close="selectedProject = null"
     />
-    <div class="width100p" style="">
-      <div class="w3-cell-row">
-        <div class="w3-cell w3-mobile p-2 w3-left">
+  </teleport>
+  <div class="container">
+    <div class="width100p">
+      <div class="d-flex justify-content-center">
+        <div class="w3-mobile p-2">
           <select
             v-model="mapState"
             @change="ChangeState"
             class="
               p-2
-              border-yello
+              mtn-border
               text-black
               cursor
               hover-effect
@@ -232,7 +232,7 @@ const pageCount = computed(() => {
             @change="ChangeLocation"
             class="
               p-2
-              border-yello
+              mtn-border
               text-black
               cursor
               hover-effect
@@ -251,12 +251,17 @@ const pageCount = computed(() => {
             </option>
           </select>
         </div>
-        <div class="w3-cell w3-mobile p-2 w3-right">
+        <div class="w3-mobile p-2">
           <div
             @click="toggleCategory(null)"
             class="
               w3-button
               px-2
+              mtn-hover-bg mtn-border
+              border-1
+              text-black
+              cursor
+              hover-effect
               w3-round-xxlarge
               m-1
               size13
@@ -274,6 +279,11 @@ const pageCount = computed(() => {
               class="
                 w3-button
                 px-2
+                mtn-hover-bg mtn-border
+                border-1
+                text-black
+                cursor
+                hover-effect
                 w3-round-xxlarge
                 m-1
                 size13
@@ -295,12 +305,24 @@ const pageCount = computed(() => {
           </template>
         </div>
       </div>
-      <div v-if="ActiveCategory" class="w3-center">
+      <div v-if="ActiveCategory" class="w3-center mb-3">
         <span
           v-if="AllSubcategories.length > 2"
           @click="toggleSubcategory(null)"
-          class="w3-button px-2 w3-round-xxlarge m-1 size13 w3-animate-opacity"
-          :class="[!ActiveSubcategory ? 'w3-yellow bold' : 'w3-white']"
+          class="
+            w3-button
+            px-2
+            mtn-hover-bg mtn-border
+            border-1
+            text-black
+            cursor
+            hover-effect
+            w3-round-xxlarge
+            m-1
+            size13
+            w3-animate-opacity
+          "
+          :class="[!ActiveSubcategory ? 'mtn-bg bold' : 'w3-white']"
         >
           All
         </span>
@@ -314,12 +336,17 @@ const pageCount = computed(() => {
             class="
               w3-button
               px-2
+              mtn-hover-bg mtn-border
+              border-1
+              text-black
+              cursor
+              hover-effect
               w3-round-xxlarge
               m-1
               size13
               w3-animate-opacity
             "
-            :class="[ActiveSubcategory === sc ? 'w3-yellow bold' : 'w3-white']"
+            :class="[ActiveSubcategory === sc ? 'mtn-bg bold' : 'w3-white']"
           >
             <img
               v-if="subcategories[sc].icon_filename"
@@ -331,39 +358,48 @@ const pageCount = computed(() => {
         </template>
       </div>
     </div>
-    <div class="w3-cell" style="width: 120px">
-      <select
-        v-model="perPage"
-        class="p-2 border-yello text-black cursor hover-effect px-2 m-3 size13"
-        style="display: block; width: 100% !important"
-      >
-        <option v-for="n in perPages" :key="n" :value="n">
-          Showing {{ n }}
-        </option>
-      </select>
+    <div class="d-flex justify-content-center align-content-start">
+      <div class="" style="width: 120px">
+        <select
+          v-model="perPage"
+          class="
+            p-2
+            border-yello
+            text-black
+            cursor
+            hover-effect
+            px-2
+            mx-3
+            size13
+          "
+          style="display: block; width: 100% !important"
+        >
+          <option v-for="n in perPages" :key="n" :value="n">
+            Showing {{ n }}
+          </option>
+        </select>
+      </div>
+      <div v-if="pageCount > 1" class="">
+        <paginate
+          v-model="page"
+          :page-count="pageCount"
+          :page-range="3"
+          :margin-pages="3"
+          :prev-text="'<<'"
+          :next-text="'>>'"
+          :container-class="'pagination'"
+          :page-link-class="'page-link w3-text-black cursor hover-effect w3-border-light-grey'"
+          :prev-class="'prev-item w3-text-black cursor hover-effect w3-border-light-grey'"
+          :prev-link-class="'page-link prev-link-item w3-text-black cursor w3-white hover-effect w3-border-light-grey'"
+          :next-class="'next-item w3-text-black cursor hover-effect w3-border-light-grey'"
+          :next-link-class="'page-link next-link-item w3-text-black cursor hover-effect w3-border-light-grey'"
+          :page-class="'page-item w3-yellow w3-hover-black cursor hover-effect w3-border-light-grey'"
+          :first-last-button="false"
+        >
+        </paginate>
+      </div>
     </div>
-    <div class="w3-cell w3-mobile">
-      <paginate
-        v-model="page"
-        :page-count="pageCount"
-        :page-range="3"
-        :margin-pages="3"
-        :prev-text="'<<'"
-        :next-text="'>>'"
-        :container-class="'pagination'"
-        :page-link-class="'page-link w3-text-black cursor hover-effect w3-border-light-grey'"
-        :prev-class="'prev-item w3-text-black cursor hover-effect w3-border-light-grey'"
-        :prev-link-class="'page-link prev-link-item w3-text-black cursor hover-effect w3-border-light-grey'"
-        :next-class="'next-item w3-text-black cursor hover-effect w3-border-light-grey'"
-        :next-link-class="'page-link next-link-item w3-text-black cursor hover-effect w3-border-light-grey'"
-        :page-class="'page-item w3-yellow w3-hover-black cursor hover-effect w3-border-light-grey'"
-        :first-last-button="false"
-      >
-      </paginate>
-    </div>
-    <div
-      style="width: 100%; height: 100vh; max-height: 100vh; overflow-x: hidden"
-    >
+    <div style="width: 100%; overflow-x: hidden">
       <div class="row" v-if="PagedData.length">
         <div
           v-for="project in PagedData"
@@ -403,21 +439,15 @@ const pageCount = computed(() => {
               </div>
               <div class="mtn-card__content">
                 <div
-                  class="
-                    mtn-tag mtn-tag--yellow
-                    px-3
-                    py-1
-                    mb-2
-                    w3-round-xxlarge
-                  "
-                  style="font-size: 14px"
+                  class="mtn-tag mtn-tag--yellow px-3 mb-2"
+                  style="font-size: 14px; padding: 0px 12px !important"
                 >
                   <img
                     v-if="categories[project.category_uuid].icon_filename"
                     :src="`${BASEURL}images/icons/categories/${
                       categories[project.category_uuid].icon_filename
                     }`"
-                    style="width: 24px"
+                    style="width: 24px; padding: 0px !important"
                   />
                   {{ categories[project.category_uuid].name }}
                 </div>
@@ -450,6 +480,25 @@ const pageCount = computed(() => {
 .page-link {
   background-color: #fff !important;
   color: #000;
+}
+.mtn-color {
+  color: #ffcc01 !important;
+}
+.mtn-bg {
+  background-color: #ffcc01 !important;
+}
+.mtn-hover-bg:hover {
+  background-color: #ffcc01 !important;
+}
+.mtn-bg-light {
+  background-color: rgba(255, 204, 1, 0.5) !important;
+}
+.mtn-border {
+  border-color: #ffcc01 !important;
+  border-style: solid !important;
+}
+.border-1 {
+  border-width: 1px !important;
 }
 </style>
 
